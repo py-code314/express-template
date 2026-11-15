@@ -3,6 +3,9 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 
+import * as routes from './routes/index-routes.js'
+import errorHandler from './middleware/error-handler.js'
+
 
 /**
  * -------------- GENERAL SETUP ----------------
@@ -21,6 +24,10 @@ app.use(express.urlencoded({ extended: true })) // To parse URL encoded form dat
 
 import './config/passport-local.js' // Local strategy for initial log-in
 import './config/passport-jwt.js' // JWT strategy for all subsequent log ins
+
+/**
+ * -------------- ROUTES ----------------
+ */
 
 /**
  * -------------- ERROR HANDLER MIDDLEWARE ----------------
